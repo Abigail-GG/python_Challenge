@@ -44,4 +44,14 @@ with open (csvpath) as csvfile:
         print(f'{candidates[i]}: {fixPercent(votes_percent[i])} ({votes[i]})')
     print('----------------------------')
     print(f'Winner: {str(winner)}')
+
+    f=open('results.txt','w+')
+    f.write('\nElection Results')
+    f.write('\n----------------------------')
+    f.write(f'\nTotal Votes: {total_votes}')
+    f.write('\n----------------------------')
+    for i in range(len(candidates)):
+        f.write(f'\n{candidates[i]}: {fixPercent(votes_percent[i])} ({votes[i]})')
+    f.write('\n----------------------------')
+    f.write(f'\nWinner: {str(winner)}')
     
